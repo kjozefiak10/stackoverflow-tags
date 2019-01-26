@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/TagsExplorer/TagsExplorer.Web/bin/Debug/netcoreapp2.1
+/TagsExplorer/.vs/TagsExplorer/v15
+/TagsExplorer/TagsExplorer.Web/obj
