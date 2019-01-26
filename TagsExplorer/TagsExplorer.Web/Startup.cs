@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TagsExplorer.StackOverflow;
 
 namespace TagsExplorer.Web
 {
@@ -30,6 +31,8 @@ namespace TagsExplorer.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddTransient<ITagsProvider<ExtendedTagModel>>(p => new UsagePercentageTagsProvider(new StackOverflowTagsProvider(Configuration["StackOverflowApiAddress"])));
+            services.AddTransient(sp => new TagCountConfig(int.Parse(Configuration["TagsCount"])));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagsExplorer.Web", "TagsExplorer.Web\TagsExplorer.Web.csproj", "{8B4A2B77-DA8C-4BA9-B296-EFD822FC5274}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagsExplorer", "TagsExplorer\TagsExplorer.csproj", "{128AA58B-E741-4B00-916A-D9CB5F9DCF93}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{8B4A2B77-DA8C-4BA9-B296-EFD822FC5274}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B4A2B77-DA8C-4BA9-B296-EFD822FC5274}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B4A2B77-DA8C-4BA9-B296-EFD822FC5274}.Release|Any CPU.Build.0 = Release|Any CPU
+		{128AA58B-E741-4B00-916A-D9CB5F9DCF93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{128AA58B-E741-4B00-916A-D9CB5F9DCF93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{128AA58B-E741-4B00-916A-D9CB5F9DCF93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{128AA58B-E741-4B00-916A-D9CB5F9DCF93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
