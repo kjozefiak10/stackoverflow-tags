@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagsExplorer.Web", "TagsExplorer.Web\TagsExplorer.Web.csproj", "{8B4A2B77-DA8C-4BA9-B296-EFD822FC5274}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TagsExplorer.Web", "TagsExplorer.Web\TagsExplorer.Web.csproj", "{8B4A2B77-DA8C-4BA9-B296-EFD822FC5274}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagsExplorer", "TagsExplorer\TagsExplorer.csproj", "{128AA58B-E741-4B00-916A-D9CB5F9DCF93}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TagsExplorer", "TagsExplorer\TagsExplorer.csproj", "{128AA58B-E741-4B00-916A-D9CB5F9DCF93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagsExplorer.Tests", "TagsExplorer.Tests\TagsExplorer.Tests.csproj", "{B79EF8FB-0B61-4CED-A190-FA979501A6CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagsExplorer.Web.Tests", "TagsExplorer.Web.Tests\TagsExplorer.Web.Tests.csproj", "{1CE0E04E-0C97-4A10-A73A-811B64EDB702}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{128AA58B-E741-4B00-916A-D9CB5F9DCF93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{128AA58B-E741-4B00-916A-D9CB5F9DCF93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{128AA58B-E741-4B00-916A-D9CB5F9DCF93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B79EF8FB-0B61-4CED-A190-FA979501A6CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B79EF8FB-0B61-4CED-A190-FA979501A6CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B79EF8FB-0B61-4CED-A190-FA979501A6CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B79EF8FB-0B61-4CED-A190-FA979501A6CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CE0E04E-0C97-4A10-A73A-811B64EDB702}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CE0E04E-0C97-4A10-A73A-811B64EDB702}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CE0E04E-0C97-4A10-A73A-811B64EDB702}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CE0E04E-0C97-4A10-A73A-811B64EDB702}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace TagsExplorer.StackOverflow
@@ -11,7 +12,7 @@ namespace TagsExplorer.StackOverflow
         private readonly IRestClient _restClient;
 
         /// <summary>
-        /// This value is defined by StackOverflow Api.
+        /// This value is defined by StackOverflow Api Docs.
         /// See more: https://api.stackexchange.com/docs/paging.
         /// </summary>
         public static readonly byte PageSize = 100;
@@ -28,6 +29,13 @@ namespace TagsExplorer.StackOverflow
             _restClient = restClient ?? throw new ArgumentNullException(nameof(restClient));
         }
 
+        /// <summary>
+        /// TODO:
+        ///     - using paraller requests, but it can be impossible because RestClient using underhood lock statement...,
+        ///     - handle exceptions on above layer
+        ///     - optimize tags count condition.
+        /// </summary>
+        /// <exception cref="Exception" />
         public async Task<IEnumerable<TagModel>> GetMostUsedTags(int count)
         {
             var (pageCount, lastPageSize) = CalculatePageParams(count);
@@ -41,8 +49,14 @@ namespace TagsExplorer.StackOverflow
                 int currentPageSize = currentPage == pageCount ? lastPageSize : PageSize;
                 request.AddOrUpdateParameter("pageSize", currentPageSize);
                 request.AddOrUpdateParameter("page", currentPage);
+
                 var response = await _restClient.ExecuteGetTaskAsync<TagItems>(request);
-                tags.AddRange(response.Data.Items.Select(i => new TagModel(i.Name, i.Count)));
+
+                if (response.Data == null || response.StatusCode != HttpStatusCode.OK)
+                    throw new Exception($"Bad response from StackOverflow api. Response code: {response.StatusCode}.");
+
+                IEnumerable<TagModel> pageTags = response.Data.Items.Select(i => new TagModel(i.Name, i.Count));
+                tags.AddRange(pageTags);
 
                 if (response.Data.Has_More == false)
                     break;
@@ -50,9 +64,15 @@ namespace TagsExplorer.StackOverflow
             } while (++currentPage <= pageCount);
 
 
-            return tags;
+            return tags.Count > count ? tags.Take(count) : tags;
         }
 
+        /// <summary>
+        /// TODO: 
+        ///     - add filter param to choose only needed fields,
+        ///     - move explicitly strings to dedicated class like StackOverflowParamsConstant.
+        /// </summary>
+        /// <returns></returns>
         private IRestRequest CreateBaseRequest()
         {
             return new RestRequest("tags")

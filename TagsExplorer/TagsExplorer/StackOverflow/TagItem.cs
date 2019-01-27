@@ -1,4 +1,8 @@
-﻿namespace TagsExplorer.StackOverflow
+﻿using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("TagsExplorer.Tests")]
+[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
+namespace TagsExplorer.StackOverflow
 {
     internal class TagItem
     {

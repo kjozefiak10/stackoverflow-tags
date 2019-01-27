@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace TagsExplorer.Web
+﻿namespace TagsExplorer.Web
 {
+    /// <summary>
+    /// Temporary place to configure tag count on site.
+    /// </summary>
     public class TagCountConfig
     {
         public TagCountConfig(int tagCount)

@@ -18,7 +18,7 @@ namespace TagsExplorer
         {
             IEnumerable<TagModel> tags = await _tagsProvider.GetMostUsedTags(count);
             int usageCountSum = tags.Sum(t => t.UsageCount);
-            return tags.Select(t => new ExtendedTagModel(t.Name, t.UsageCount, t.UsageCount / usageCountSum));
+            return tags.Select(t => new ExtendedTagModel(t.Name, t.UsageCount, Math.Round(t.UsageCount / (double)usageCountSum * 100, 2)));
         }
     }
 }

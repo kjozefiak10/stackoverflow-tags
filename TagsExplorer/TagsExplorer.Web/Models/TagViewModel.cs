@@ -2,7 +2,7 @@
 {
     public class TagViewModel
     {
-        public TagViewModel(string name, int usageCount, int usagePercentage)
+        public TagViewModel(string name, int usageCount, double usagePercentage)
         {
             Name = name;
             UsageCount = usageCount;
@@ -11,6 +11,6 @@
 
         public string Name { get; }
         public int UsageCount { get; }
-        public int UsagePercentage { get; }
+        public double UsagePercentage { get; }
     }
 }

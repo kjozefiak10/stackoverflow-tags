@@ -9,3 +9,7 @@
 /TagsExplorer/.vs/config
 /TagsExplorer/TagsExplorer/bin/Debug/netcoreapp2.1
 /TagsExplorer/TagsExplorer/obj
+/TagsExplorer/TagsExplorer.Tests/bin/Debug/netcoreapp2.1
+/TagsExplorer/TagsExplorer.Tests/obj
+/TagsExplorer/TagsExplorer.Web.Tests/bin/Debug/netcoreapp2.1
+/TagsExplorer/TagsExplorer.Web.Tests/obj

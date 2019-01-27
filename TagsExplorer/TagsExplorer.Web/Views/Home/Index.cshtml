@@ -18,7 +18,7 @@
             </thead>
             <thead>
                 @{ int i = 0; }
-                @foreach (TagViewModel tag in Model)
+                @foreach (TagViewModel tag in Model.OrderByDescending(t => t.UsageCount))
                 {
                     i++;
                     <tr>

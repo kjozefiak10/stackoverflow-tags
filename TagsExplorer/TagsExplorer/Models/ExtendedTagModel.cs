@@ -2,12 +2,12 @@
 {
     public class ExtendedTagModel : TagModel
     {
-        public ExtendedTagModel(string name, int usageCount, int usagePercentage) 
+        public ExtendedTagModel(string name, int usageCount, double usagePercentage) 
             : base(name, usageCount)
         {
             UsagePercentage = usagePercentage;
         }
 
-        public int UsagePercentage { get; }
+        public double UsagePercentage { get; }
     }
 }
